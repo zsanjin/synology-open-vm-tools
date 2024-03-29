@@ -1,12 +1,12 @@
 PKG_NAME = open-vm-tools
-PKG_VERS = 12.3.5
-PKG_BUILD = 22544099
+PKG_VERS = 12.4.0
+PKG_BUILD = 23259341
 PKG_EXT = tar.gz
 PKG_DIST_NAME = $(PKG_NAME)-$(PKG_VERS)-$(PKG_BUILD).$(PKG_EXT)
 PKG_DIST_SITE = https://github.com/vmware/open-vm-tools/releases/download/stable-$(PKG_VERS)
 PKG_DIR = $(PKG_NAME)-$(PKG_VERS)-$(PKG_BUILD)
 
-DEPENDS = cross/libmspack cross/glib cross/protobuf cross/openssl cross/fuse cross/curl cross/libtirpc cross/procps-ng cross/icu
+DEPENDS = cross/libmspack cross/glib cross/protobuf cross/openssl cross/fuse cross/curl cross/libtirpc cross/procps-ng cross/icu cross/libiconv
 
 HOMEPAGE = https://github.com/vmware/open-vm-tools
 COMMENT  = VMware open-vm-tools project
@@ -18,7 +18,7 @@ POST_INSTALL_TARGET = vmtools_post_install
 
 ENV = PATH=$(STAGING_INSTALL_PREFIX)/bin:$$PATH
 ENV += CUSTOM_PROCPS_NAME=procps
-ENV += CUSTOM_PROCPS_LIBS="-L$(STAGING_INSTALL_PREFIX)/lib -lprocps"
+ENV += CUSTOM_PROCPS_LIBS="-L$(STAGING_INSTALL_PREFIX)/lib -lprocps -liconv"
 
 GNU_CONFIGURE = 1
 CONFIGURE_ARGS = --without-x
