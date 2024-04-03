@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [geminilake-7.1]
+        target: [x64-7.1, aarch64-7.1, geminilake-7.1]
 
     steps:
     - name: Checkout
