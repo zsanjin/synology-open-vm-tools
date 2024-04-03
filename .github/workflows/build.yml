@@ -29,7 +29,9 @@ jobs:
       run: |
         docker pull ghcr.io/synocommunity/spksrc
         git clone --depth=1 https://github.com/SynoCommunity/spksrc.git
-        cp -rf ./* spksrc
+        cp -rf cross/* spksrc/cross
+        cp -rf native/* spksrc/native
+        cp -rf spk/* spksrc/spk
 
     - name: Build Package
       run: |
