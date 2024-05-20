@@ -1,6 +1,6 @@
 SPK_NAME = open-vm-tools
 SPK_VERS = 12.4.0
-SPK_REV = 1
+SPK_REV = 2
 SPK_ICON = src/open-vm-tools.png
 BETA = 1
 
@@ -8,7 +8,7 @@ DEPENDS = cross/$(SPK_NAME)
 UNSUPPORTED_ARCHS = $(PPC_ARCHS) $(ARMv5_ARCHS) $(i686_ARCHS) $(ARMv7L_ARCHS)
 
 MAINTAINER = zsanjin
-DESCRIPTION = open-vm-tools is a set of services and modules that enable several features in VMware products for better management of, and seamless user interactions with, guests.
+DESCRIPTION = open-vm-tools is a set of services and modules that enable several features in VMware products for better management of, and seamless user interactions with, guests. ⚠️安装完毕SSH修复：sudo sed -i 's/package/root/g' /var/packages/open-vm-tools/conf/privilege
 RELOAD_UI = yes
 DISPLAY_NAME = VMware Tools
 CHANGELOG = "SPK Open-vm-tools | 23 Mar 2024 | Build 23259341"
